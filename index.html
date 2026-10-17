@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fatass Dog</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #000; }
+  body { display: flex; align-items: center; justify-content: center; cursor: pointer; }
+  #prompt { color: #fff; font: 24px sans-serif; user-select: none; }
+  video { display: none; max-width: 100%; max-height: 100%; }
+</style>
+</head>
+<body>
+<div id="prompt">Click to allow</div>
+<video id="v" src="video.mp4" playsinline></video>
+<script>
+  document.body.addEventListener('click', () => {
+    document.getElementById('prompt').style.display = 'none';
+    const v = document.getElementById('v');
+    v.style.display = 'block';
+    v.play();
+  }, { once: true });
+</script>
+</body>
+</html>
